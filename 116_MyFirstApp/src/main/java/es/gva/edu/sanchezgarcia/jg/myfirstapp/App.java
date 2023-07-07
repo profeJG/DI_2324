@@ -11,6 +11,6 @@ package es.gva.edu.sanchezgarcia.jg.myfirstapp;
 public class App {
 
     public static void main(String[] args) {
-        System.out.println("Hola mundo");
+        System.out.println("Hello world!");
     }
 }
