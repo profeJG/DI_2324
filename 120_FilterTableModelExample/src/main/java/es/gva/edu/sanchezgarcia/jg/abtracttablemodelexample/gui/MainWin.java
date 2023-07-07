@@ -78,6 +78,11 @@ public class MainWin extends javax.swing.JFrame {
         jScrollPaneNorth.setViewportView(jTableAlumnos);
 
         jButtonSeleccionar.setText("Seleccionar");
+        jButtonSeleccionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSeleccionarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelSouthLayout = new javax.swing.GroupLayout(jPanelSouth);
         jPanelSouth.setLayout(jPanelSouthLayout);
@@ -138,6 +143,12 @@ public class MainWin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSeleccionarActionPerformed
+        // TODO add your handling code here:
+        int seleccionado=jTableAlumnos.convertRowIndexToModel(jTableAlumnos.getSelectedRow());
+        jLabelSeleccion.setText(logicaNegocio.getListaAlumnos().get(seleccionado).getNombre());
+    }//GEN-LAST:event_jButtonSeleccionarActionPerformed
 
     /**
      * @param args the command line arguments
