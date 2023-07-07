@@ -8,6 +8,7 @@ import es.gva.edu.sanchezgarcia.jg.abtracttablemodelexample.gui.tablemodels.Alum
 import es.gva.edu.sanchezgarcia.jg.abtracttablemodelexample.logic.LogicApp;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.RowFilter;
 import javax.swing.RowSorter.SortKey;
 import javax.swing.SortOrder;
 import javax.swing.table.TableRowSorter;
@@ -18,6 +19,7 @@ import javax.swing.table.TableRowSorter;
  */
 public class MainWin extends javax.swing.JFrame {
     private LogicApp logicaNegocio=null;
+    private TableRowSorter<AlumnoTableModel> sorter=null;
     
     private void rellenarTablaAlumnos()
     {
@@ -25,7 +27,7 @@ public class MainWin extends javax.swing.JFrame {
         AlumnoTableModel atm=new AlumnoTableModel(logicaNegocio.getListaAlumnos());
         jTableAlumnos.setModel(atm);
         
-        TableRowSorter<AlumnoTableModel> sorter=new TableRowSorter<>(atm);
+        this.sorter=new TableRowSorter<>(atm);
         jTableAlumnos.setRowSorter(sorter);
         
         List<SortKey> sortKeys=new ArrayList();
@@ -116,6 +118,11 @@ public class MainWin extends javax.swing.JFrame {
         jLabelSeleccion.getAccessibleContext().setAccessibleName("");
 
         jButtonFiltrar.setText("Filtrar");
+        jButtonFiltrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFiltrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,6 +156,12 @@ public class MainWin extends javax.swing.JFrame {
         int seleccionado=jTableAlumnos.convertRowIndexToModel(jTableAlumnos.getSelectedRow());
         jLabelSeleccion.setText(logicaNegocio.getListaAlumnos().get(seleccionado).getNombre());
     }//GEN-LAST:event_jButtonSeleccionarActionPerformed
+
+    private void jButtonFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFiltrarActionPerformed
+        // TODO add your handling code here:
+        RowFilter<AlumnoTableModel,Integer> rf = RowFilter.regexFilter(jTextFieldFiltro.getText(),0);
+        this.sorter.setRowFilter(rf);
+    }//GEN-LAST:event_jButtonFiltrarActionPerformed
 
     /**
      * @param args the command line arguments
