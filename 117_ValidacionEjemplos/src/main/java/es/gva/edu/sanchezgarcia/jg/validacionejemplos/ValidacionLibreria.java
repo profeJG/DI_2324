@@ -7,6 +7,7 @@ package es.gva.edu.sanchezgarcia.jg.validacionejemplos;
 import java.util.Locale;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import org.netbeans.validation.api.builtin.stringvalidation.MayusculasValidacion;
 import org.netbeans.validation.api.builtin.stringvalidation.StringValidators;
 import org.netbeans.validation.api.ui.ValidationGroup;
 
@@ -25,7 +26,7 @@ public class ValidacionLibreria extends javax.swing.JFrame {
         
         ValidationGroup grupo=validationPanel.getValidationGroup();
         
-        grupo.add(jTextFieldNombre, StringValidators.REQUIRE_NON_EMPTY_STRING);
+        grupo.add(jTextFieldNombre, StringValidators.REQUIRE_NON_EMPTY_STRING, new MayusculasValidacion());
         grupo.add(jTextFieldEdad, StringValidators.REQUIRE_VALID_INTEGER);
         validationPanel.addChangeListener((ChangeEvent ce) -> {
             //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
