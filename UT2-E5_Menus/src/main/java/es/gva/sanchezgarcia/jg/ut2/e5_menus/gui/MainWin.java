@@ -9,7 +9,13 @@ package es.gva.sanchezgarcia.jg.ut2.e5_menus.gui;
  * @author josegaspar
  */
 public class MainWin extends javax.swing.JFrame {
-
+    private int contadorHabitacion;
+    private int contadorSalon;
+    private int contadorCocina;
+    private int contadorBanyo;
+    private int contadorGaraje;
+    private int contadorTrastero;
+    
     /**
      * Creates new form MainWin
      */
@@ -18,6 +24,12 @@ public class MainWin extends javax.swing.JFrame {
         // Agrupamos RadioButtons
         this.buttonGroupCasa.add(jRadioButtonMenuItemBanyo);
         this.buttonGroupCasa.add(jRadioButtonMenuItemCocina);
+        this.contadorHabitacion=0;
+        this.contadorSalon=0;
+        this.contadorCocina=0;
+        this.contadorBanyo=0;
+        this.contadorGaraje=0;
+        this.contadorTrastero=0;
     }
 
     /**
@@ -61,6 +73,11 @@ public class MainWin extends javax.swing.JFrame {
         jMenuHabitacion.setText("Habitación");
 
         jMenuItemHabitación1.setText("Habitación 1");
+        jMenuItemHabitación1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemHabitación1ActionPerformed(evt);
+            }
+        });
         jMenuHabitacion.add(jMenuItemHabitación1);
 
         jMenuItemHabitacion2.setText("Habitación 2");
@@ -72,16 +89,31 @@ public class MainWin extends javax.swing.JFrame {
         jCheckBoxMenuItemSalon.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jCheckBoxMenuItemSalon.setSelected(true);
         jCheckBoxMenuItemSalon.setText("Salón");
+        jCheckBoxMenuItemSalon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItemSalonActionPerformed(evt);
+            }
+        });
         jMenuCasa.add(jCheckBoxMenuItemSalon);
         jMenuCasa.add(jSeparator1);
 
         jRadioButtonMenuItemCocina.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jRadioButtonMenuItemCocina.setSelected(true);
         jRadioButtonMenuItemCocina.setText("Cocina");
+        jRadioButtonMenuItemCocina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItemCocinaActionPerformed(evt);
+            }
+        });
         jMenuCasa.add(jRadioButtonMenuItemCocina);
 
         jRadioButtonMenuItemBanyo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jRadioButtonMenuItemBanyo.setText("Baño");
+        jRadioButtonMenuItemBanyo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItemBanyoActionPerformed(evt);
+            }
+        });
         jMenuCasa.add(jRadioButtonMenuItemBanyo);
 
         jMenuBarCasa.add(jMenuCasa);
@@ -90,10 +122,20 @@ public class MainWin extends javax.swing.JFrame {
 
         jMenuItemGaraje.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItemGaraje.setText("Garaje");
+        jMenuItemGaraje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemGarajeActionPerformed(evt);
+            }
+        });
         jMenuExtras.add(jMenuItemGaraje);
 
         jMenuItemTrastero.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItemTrastero.setText("Trastero");
+        jMenuItemTrastero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemTrasteroActionPerformed(evt);
+            }
+        });
         jMenuExtras.add(jMenuItemTrastero);
 
         jMenuBarCasa.add(jMenuExtras);
@@ -102,6 +144,125 @@ public class MainWin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItemHabitación1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemHabitación1ActionPerformed
+        // TODO add your handling code here:
+        contadorHabitacion++;
+        String cad;
+        if(contadorHabitacion==1)
+            cad="Has entrado a la habitación "+contadorHabitacion+" vez.";
+        else
+            cad="Has entrado a la habitación "+contadorHabitacion+" veces.";
+            
+        System.out.println(cad);
+        String txt=jTextPaneLog.getText();
+        txt=txt+cad+"\n";
+        jTextPaneLog.setText(txt);
+        
+    }//GEN-LAST:event_jMenuItemHabitación1ActionPerformed
+
+    private void jCheckBoxMenuItemSalonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemSalonActionPerformed
+        // TODO add your handling code here:
+        String estado="";
+        
+        contadorSalon++;
+        String cad;
+        if(contadorSalon==1)
+            cad="Has entrado al salón "+contadorSalon+" vez. Estado ";
+        else
+            cad="Has entrado al salón "+contadorSalon+" veces. Estado ";
+        
+        if(jCheckBoxMenuItemSalon.getState())
+            estado="activado.";
+        else
+            estado="desactivado.";
+        
+        cad=cad+estado;    
+        System.out.println(cad);
+        String txt=jTextPaneLog.getText();
+        txt=txt+cad+"\n";
+        jTextPaneLog.setText(txt);
+        
+        
+    }//GEN-LAST:event_jCheckBoxMenuItemSalonActionPerformed
+
+    private void jRadioButtonMenuItemCocinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItemCocinaActionPerformed
+        // TODO add your handling code here:
+        String estado="";
+        
+        contadorCocina++;
+        String cad;
+        if(contadorCocina==1)
+            cad="Has entrado en la cocina "+contadorCocina+" vez. Estado ";
+        else
+            cad="Has entrado en la cocina "+contadorCocina+" veces. Estado ";
+        
+        if(jRadioButtonMenuItemCocina.isSelected())
+            estado="activado.";
+        else
+            estado="desactivado.";
+        
+        cad=cad+estado;    
+        System.out.println(cad);
+        String txt=jTextPaneLog.getText();
+        txt=txt+cad+"\n";
+        jTextPaneLog.setText(txt);
+    }//GEN-LAST:event_jRadioButtonMenuItemCocinaActionPerformed
+
+    private void jRadioButtonMenuItemBanyoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItemBanyoActionPerformed
+        // TODO add your handling code here:
+        String estado="";
+        
+        contadorBanyo++;
+        String cad;
+        if(contadorBanyo==1)
+            cad="Has entrado al baño "+contadorBanyo+" vez. Estado ";
+        else
+            cad="Has entrado al baño "+contadorBanyo+" veces. Estado ";
+        
+        if(jRadioButtonMenuItemBanyo.isSelected())
+            estado="activado.";
+        else
+            estado="desactivado.";
+        
+        cad=cad+estado;    
+        System.out.println(cad);
+        String txt=jTextPaneLog.getText();
+        txt=txt+cad+"\n";
+        jTextPaneLog.setText(txt);
+    }//GEN-LAST:event_jRadioButtonMenuItemBanyoActionPerformed
+
+    private void jMenuItemGarajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemGarajeActionPerformed
+        // TODO add your handling code here:
+        
+        contadorGaraje++;
+        String cad;
+        if(contadorGaraje==1)
+            cad="Has entrado en el garaje "+contadorGaraje+" vez.";
+        else
+            cad="Has entrado en el garaje "+contadorGaraje+" veces.";
+       
+        System.out.println(cad);
+        String txt=jTextPaneLog.getText();
+        txt=txt+cad+"\n";
+        jTextPaneLog.setText(txt);
+    }//GEN-LAST:event_jMenuItemGarajeActionPerformed
+
+    private void jMenuItemTrasteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTrasteroActionPerformed
+        // TODO add your handling code here:
+       
+        contadorTrastero++;
+        String cad;
+        if(contadorTrastero==1)
+            cad="Has entrado en el trastero "+contadorTrastero+" vez.";
+        else
+            cad="Has entrado en el trastero "+contadorTrastero+" veces.";
+       
+        System.out.println(cad);
+        String txt=jTextPaneLog.getText();
+        txt=txt+cad+"\n";
+        jTextPaneLog.setText(txt);
+    }//GEN-LAST:event_jMenuItemTrasteroActionPerformed
 
     /**
      * @param args the command line arguments
