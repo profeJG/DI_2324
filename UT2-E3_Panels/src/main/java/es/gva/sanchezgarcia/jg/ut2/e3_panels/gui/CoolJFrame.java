@@ -16,7 +16,11 @@ import javax.swing.ListModel;
  */
 public class CoolJFrame extends javax.swing.JFrame {
     private LogicApp app;
-    
+    /**
+     * Modelo abstracto para cargar el listado de actores en el JList
+     * @param actores
+     * @return 
+     */
     private AbstractListModel<String> getModeloListadoActores(String[] actores)
     {
         return (new AbstractListModel<String>() {
@@ -45,13 +49,16 @@ public class CoolJFrame extends javax.swing.JFrame {
         
         // Carpamos datos en la pestña Sinopsis;
         jTextPaneSinopsis.setText(app.getPelicula().getSinopsis());
+        
         // Cargamos reparto
         String actores[]=app.getListadoActores();
-        
         AbstractListModel<String> model=this.getModeloListadoActores(actores);
-        
-        
         this.jListActores.setModel(model);
+        
+        // Seleccionamos el primer actor
+        this.jListActores.setSelectedIndex(0);
+        this.jTextPaneRepartoInfo.setText(app.getPelicula().getReparto().get(0).getBibliografia());
+        
     }
 
     /**
