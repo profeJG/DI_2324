@@ -6,6 +6,9 @@ package es.gva.sanchezgarcia.jg.ut2.e3_panels.logic;
 
 import es.gva.sanchezgarcia.jg.ut2.e3_panels.beans.Actor;
 import es.gva.sanchezgarcia.jg.ut2.e3_panels.beans.Pelicula;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -62,5 +65,20 @@ public class LogicApp {
 
     public Pelicula getPelicula() {
         return pelicula;
+    }
+    
+    public String[] getListadoActores(){
+        List<String> milista=new ArrayList();
+        
+        List<Actor> reparto = this.pelicula.getReparto();
+        
+        for(Actor a : reparto){
+            milista.add(a.getActorNombreApellidos());
+        }
+        
+        String [] miarray =new String[milista.size()];
+        miarray=milista.toArray(miarray);
+        
+        return miarray;
     }
 }

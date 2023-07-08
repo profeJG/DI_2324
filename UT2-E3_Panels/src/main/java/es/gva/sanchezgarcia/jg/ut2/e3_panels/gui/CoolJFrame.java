@@ -6,7 +6,9 @@ package es.gva.sanchezgarcia.jg.ut2.e3_panels.gui;
 
 import es.gva.sanchezgarcia.jg.ut2.e3_panels.logic.LogicApp;
 import java.awt.Component;
+import javax.swing.AbstractListModel;
 import javax.swing.JPanel;
+import javax.swing.ListModel;
 
 /**
  *
@@ -14,6 +16,25 @@ import javax.swing.JPanel;
  */
 public class CoolJFrame extends javax.swing.JFrame {
     private LogicApp app;
+    
+    private AbstractListModel<String> getModeloListadoActores(String[] actores)
+    {
+        return (new AbstractListModel<String>() {
+            @Override
+            public int getSize() {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                return actores.length;
+            }
+
+            @Override
+            public String getElementAt(int i) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                return actores[i];
+            }
+        });
+    }
+    
+    
     /**
      * Creates new form CoolJFrame
      */
@@ -24,8 +45,13 @@ public class CoolJFrame extends javax.swing.JFrame {
         
         // Carpamos datos en la pestña Sinopsis;
         jTextPaneSinopsis.setText(app.getPelicula().getSinopsis());
+        // Cargamos reparto
+        String actores[]=app.getListadoActores();
+        
+        AbstractListModel<String> model=this.getModeloListadoActores(actores);
         
         
+        this.jListActores.setModel(model);
     }
 
     /**
