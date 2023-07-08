@@ -184,6 +184,11 @@ public class MainWin extends javax.swing.JFrame {
         });
 
         btnDia3.setText("Día 3");
+        btnDia3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDia3ActionPerformed(evt);
+            }
+        });
 
         jLabelSuperior.setText("Pulsa sobre los botones para ver la información del día.");
 
