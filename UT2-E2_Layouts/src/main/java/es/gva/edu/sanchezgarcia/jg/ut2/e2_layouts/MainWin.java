@@ -228,6 +228,11 @@ public class MainWin extends javax.swing.JFrame {
         jPanelInferior.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         jButtonRestaurar.setText("Restaurar");
+        jButtonRestaurar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRestaurarActionPerformed(evt);
+            }
+        });
 
         jButtonCerrar.setText("Cerrar");
         jButtonCerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -279,6 +284,23 @@ public class MainWin extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButtonCerrarActionPerformed
+    
+    private void jButtonRestaurarActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        System.out.println("Restaurar");
+        
+        btnDia1.setEnabled(true);
+        btnDia2.setEnabled(true);
+        btnDia3.setEnabled(true);
+        
+        jPanel0.setVisible(true);
+        jPanel1.setVisible(false);
+        jPanel2.setVisible(false);
+        jPanel3.setVisible(false);
+        
+        jLabelSuperior.setText("Pulsa sobre los botones para ver la información del día");
+        
+    }
 /**
  * Botoón1: Acción al hacer click
  * @param evt 
