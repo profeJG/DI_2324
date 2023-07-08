@@ -177,6 +177,11 @@ public class MainWin extends javax.swing.JFrame {
         });
 
         btnDia2.setText("Día 2");
+        btnDia2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDia2ActionPerformed(evt);
+            }
+        });
 
         btnDia3.setText("Día 3");
 
@@ -269,18 +274,52 @@ public class MainWin extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButtonCerrarActionPerformed
-
+/**
+ * Botoón1: Acción al hacer click
+ * @param evt 
+ */
     private void btnDia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDia1ActionPerformed
         // TODO add your handling code here:
         btnDia1.setEnabled(false);
-        jPanel1.setVisible(true);
+        btnDia2.setEnabled(true);
+        btnDia3.setEnabled(true);
+        
         jPanel0.setVisible(false);
+        jPanel1.setVisible(true);
         jPanel2.setVisible(false);
         jPanel3.setVisible(false);
-        jLabelSuperior.setText("Información del primer día.");
         
+        jLabelSuperior.setText("Información del primer día.");  
     }//GEN-LAST:event_btnDia1ActionPerformed
 
+    private void btnDia2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        btnDia1.setEnabled(true);
+        btnDia2.setEnabled(false);
+        btnDia3.setEnabled(true);
+        
+        jPanel0.setVisible(false);
+        jPanel1.setVisible(false);
+        jPanel2.setVisible(true);
+        jPanel3.setVisible(false);
+        
+        jLabelSuperior.setText("Información del segundo día.");
+    }
+    
+    private void btnDia3ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        btnDia1.setEnabled(true);
+        btnDia2.setEnabled(true);
+        btnDia3.setEnabled(false);
+        
+        jPanel0.setVisible(false);
+        jPanel1.setVisible(false);
+        jPanel2.setVisible(false);
+        jPanel3.setVisible(true);
+        
+        jLabelSuperior.setText("Información del tercer día.");
+    }
+    
     /**
      * @param args the command line arguments
      */
