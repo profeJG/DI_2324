@@ -57,7 +57,7 @@ public class CoolJFrame extends javax.swing.JFrame {
         
         // Seleccionamos el primer actor
         this.jListActores.setSelectedIndex(0);
-        this.jTextPaneRepartoInfo.setText(app.getPelicula().getReparto().get(0).getBibliografia());
+        this.jTextPaneRepartoInfo.setText(app.getPelicula().getReparto().get(0).getBiografia());
         
     }
 
@@ -175,6 +175,11 @@ public class CoolJFrame extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jListActores.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jListActoresValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(jListActores);
 
         jScrollPane2.setViewportView(jTextPaneRepartoInfo);
@@ -282,6 +287,16 @@ public class CoolJFrame extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jTabbedPaneCentralStateChanged
+/**
+ * Capturamos el evento que se produce cuando se cambia el valor seleccionado en la lista.
+ * @param evt 
+ */
+    private void jListActoresValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListActoresValueChanged
+        // TODO add your handling code here:
+        int indiceSeleccion=jListActores.getSelectedIndex();
+        
+        this.jTextPaneRepartoInfo.setText(app.getPelicula().getReparto().get(indiceSeleccion).getBiografia());
+    }//GEN-LAST:event_jListActoresValueChanged
 
     /**
      * @param args the command line arguments

@@ -42,7 +42,7 @@ public class Actor {
         this.apellidos = apellidos;
     }
 
-    public String getBibliografia() {
+    public String getBiografia() {
         return bibliografia;
     }
 
