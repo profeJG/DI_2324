@@ -4,6 +4,7 @@
  */
 package es.gva.sanchezgarcia.jg.ut2.e3_panels.gui;
 
+import es.gva.sanchezgarcia.jg.ut2.e3_panels.logic.LogicApp;
 import java.awt.Component;
 import javax.swing.JPanel;
 
@@ -12,12 +13,19 @@ import javax.swing.JPanel;
  * @author josegaspar
  */
 public class CoolJFrame extends javax.swing.JFrame {
-
+    private LogicApp app;
     /**
      * Creates new form CoolJFrame
      */
     public CoolJFrame() {
         initComponents();
+        // Cargamos datos de la aplicación
+        this.app=new LogicApp();
+        
+        // Carpamos datos en la pestña Sinopsis;
+        jTextPaneSinopsis.setText(app.getPelicula().getSinopsis());
+        
+        
     }
 
     /**
