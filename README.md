@@ -1,4 +1,4 @@
-# DI_2324: Desarrollo de Interfaces - 2º DAM - Curso 20223
+# DI_2324: Desarrollo de Interfaces - 2º DAM - Curso 2023/2024
 Repositorio clases Desarrollo Interfaces - Curso 2023/24
 José Gaspar.
 ## Ejemplos
