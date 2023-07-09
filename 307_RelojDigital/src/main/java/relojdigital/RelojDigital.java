@@ -6,6 +6,7 @@ package relojdigital;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -56,6 +57,26 @@ public class RelojDigital extends JLabel implements Serializable {
 
         }, 0, 1000);
     }
+    
+    /* Getters and Setters */
+
+    public boolean isFormato24() {
+        return formato24;
+    }
+
+    public void setFormato24(boolean formato24) {
+        this.formato24 = formato24;
+    }
+
+    public Alarma getAlarma() {
+        return alarma;
+    }
+
+    public void setAlarma(Alarma alarma) {
+        this.alarma = alarma;
+    }
+    
+    
 
     /* Soporte de Eventos */
     public void addAlarmaListener(AlarmaListener alarmaListener) {
@@ -67,8 +88,29 @@ public class RelojDigital extends JLabel implements Serializable {
     }
 
     /* Metodos privados */
+    /**
+     * Comprueba si la horas coinciden. obvia el resto de la fecha.
+     *
+     * @param h1
+     * @param h2
+     * @return true cuando las horas sean iguales.
+     */
     private boolean horasCoinciden(Date h1, Date h2) {
-        return h1.equals(h2);
+
+        Calendar calendario = Calendar.getInstance();
+
+        calendario.setTime(h1);
+        int horasH1 = calendario.get(Calendar.HOUR_OF_DAY);
+        int minH1 = calendario.get(Calendar.MINUTE);
+        int segH1 = calendario.get(Calendar.SECOND);
+
+        calendario.setTime(h2);
+        int horasH2 = calendario.get(Calendar.HOUR_OF_DAY);
+        int minH2 = calendario.get(Calendar.MINUTE);
+        int segH2 = calendario.get(Calendar.SECOND);
+
+        return (horasH1 == horasH2 && minH1 == minH2 && segH1 == segH2);
+
     }
 
 }
