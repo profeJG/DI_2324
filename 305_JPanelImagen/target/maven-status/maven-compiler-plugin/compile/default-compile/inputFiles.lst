@@ -1,5 +1,6 @@
-/home/josegaspar/Documentos/DI_2324/303_JPanelImagen/src/main/java/jpanelimage/JPanelImagen.java
-/home/josegaspar/Documentos/DI_2324/303_JPanelImagen/src/main/java/jpanelimage/ImagenFondoPanel.java
-/home/josegaspar/Documentos/DI_2324/303_JPanelImagen/src/main/java/jpanelimage/JPanelImagenBeanInfo.java
-/home/josegaspar/Documentos/DI_2324/303_JPanelImagen/src/main/java/jpanelimage/ImagenFondoPropertyEditorSupport.java
-/home/josegaspar/Documentos/DI_2324/303_JPanelImagen/src/main/java/jpanelimage/ImagenFondo.java
+/home/josegaspar/Documentos/DI_2324/305_JPanelImagen/src/main/java/jpanelimage/ArrastreListener.java
+/home/josegaspar/Documentos/DI_2324/305_JPanelImagen/src/main/java/jpanelimage/ImagenFondo.java
+/home/josegaspar/Documentos/DI_2324/305_JPanelImagen/src/main/java/jpanelimage/ImagenFondoPanel.java
+/home/josegaspar/Documentos/DI_2324/305_JPanelImagen/src/main/java/jpanelimage/JPanelImagenBeanInfo.java
+/home/josegaspar/Documentos/DI_2324/305_JPanelImagen/src/main/java/jpanelimage/JPanelImagen.java
+/home/josegaspar/Documentos/DI_2324/305_JPanelImagen/src/main/java/jpanelimage/ImagenFondoPropertyEditorSupport.java
