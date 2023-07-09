@@ -9,5 +9,7 @@ package relojdigital;
  * @author josegaspar
  */
 public interface AlarmaListener {
-    
+
+    public void suenaAlarma();
+
 }
