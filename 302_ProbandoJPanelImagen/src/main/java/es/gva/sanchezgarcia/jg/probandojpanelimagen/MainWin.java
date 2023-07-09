@@ -26,7 +26,7 @@ public class MainWin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelImagen1 = new es.gva.sanchezgarcia.jg.jpanelimage.JPanelImagen();
+        jPanelImagen1 = new jpanelimage.JPanelImagen();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Prueba JPanelmage");
@@ -94,6 +94,6 @@ public class MainWin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private es.gva.sanchezgarcia.jg.jpanelimage.JPanelImagen jPanelImagen1;
+    private jpanelimage.JPanelImagen jPanelImagen1;
     // End of variables declaration//GEN-END:variables
 }
