@@ -49,6 +49,7 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
         });
 
         jSliderOpacidad.setPaintLabels(true);
+        jSliderOpacidad.setPaintTicks(true);
         jSliderOpacidad.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -83,7 +84,7 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jSliderOpacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

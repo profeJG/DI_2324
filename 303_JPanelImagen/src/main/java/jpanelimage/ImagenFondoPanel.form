@@ -52,7 +52,7 @@
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jSliderOpacidad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="186" max="32767" attributes="0"/>
+              <EmptySpace pref="178" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -84,6 +84,7 @@
     <Component class="javax.swing.JSlider" name="jSliderOpacidad">
       <Properties>
         <Property name="paintLabels" type="boolean" value="true"/>
+        <Property name="paintTicks" type="boolean" value="true"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
