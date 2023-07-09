@@ -22,7 +22,7 @@ public class RelojDigital extends JLabel implements Serializable {
     private Alarma alarma = null;
 
     private SimpleDateFormat sdf24h = new SimpleDateFormat("HH:mm:ss");
-    private SimpleDateFormat sdf12h = new SimpleDateFormat("HH:mm:ss a");
+    private SimpleDateFormat sdf12h = new SimpleDateFormat("hh:mm:ss a");
 
     private AlarmaListener alarmaListener;
 
@@ -43,8 +43,8 @@ public class RelojDigital extends JLabel implements Serializable {
                 }
 
                 if (alarma != null) {
-                    System.out.println(horaActual);
-                    System.out.println(alarma.getHoraAlarma());
+                    System.out.println("Ahora: "+horaActual);
+                    System.out.println("Alarma: "+alarma.getHoraAlarma());
 
                     // Disparamos la alarma
                     if (alarmaListener != null && alarma.isActiva() && horasCoinciden(horaActual, alarma.getHoraAlarma())) {
