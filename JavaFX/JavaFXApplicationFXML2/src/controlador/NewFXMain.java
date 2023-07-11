@@ -1,9 +1,10 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
  */
-package javafxapplicationfxml2;
+package controlador;
 
+import java.io.File;
 import java.net.URL;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -12,12 +13,11 @@ import javafx.stage.Stage;
  *
  * @author josegaspar
  */
-public class Main extends Application {
-
+public class NewFXMain extends Application {
+    
     @Override
-    public void start(Stage stage) {
-        
-        String fxml="EjemploVista.fxml";
+    public void start(Stage primaryStage) {
+         String fxml="app.fxml";
 
         try {
             /*
@@ -32,12 +32,12 @@ public class Main extends Application {
             System.out.println("Nombre canonigo:"+ getClass().getCanonicalName());
             System.out.println("Class Loader::: "+getClass().getClassLoader().toString());
             System.out.println("Nombre: "+getClass().getClassLoader().getName());
-            URL resource = getClass().getResource("/javafxapplicationfxml2/"+"Main.class");
+            URL resource = getClass().getResource(File.separator+"controlador"+File.separator+"NewFXMain.class");
             System.out.println("Recurso: "+ resource.getPath());
-            resource = getClass().getResource("/javafxapplicationfxml2/"+"EjemploVista.fxml");
+            resource = getClass().getClassLoader().getResource(File.separator+"icons"+File.separator+fxml);
             System.out.println("Recurso 2: "+ resource.getPath());
             
-            URL location = getClass().getResource(fxml);
+            URL location = getClass().getResource(File.separator+fxml);
            
             System.out.println("Localización: "+location.toString());
             /*
@@ -65,5 +65,5 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
+    
 }
